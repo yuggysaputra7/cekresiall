@@ -246,7 +246,7 @@
                         </div>
 
                         <!-- shipper -->
-                        <div class="col-xl-5 col-md-6 mb-4">
+                        <div class="col-xl-5 col-md-6 mb-4"id='div_pengirim'>
                             <div class="card border-left-danger shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -265,7 +265,7 @@
                         </div>
 
                           <!-- receiver -->
-                          <div class="col-xl-5 col-md-6 mb-4">
+                          <div class="col-xl-5 col-md-6 mb-4"id='div_penerima'>
                             <div class="card border-left-warning shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -416,6 +416,14 @@
             var hit_api = `https://api.binderbyte.com/v1/track?api_key=${api_key}&courier=${kurir}&awb=${no_resi_key}&cacheBuster=${cacheBuster}`;
             
             // Mengirim form menggunakan metode get
+
+            if(kurir === 'jnt'){
+                $("#div_pengirim").hide(); 
+                $("#div_penerima").hide(); 
+            }else{
+                $("#div_pengirim").show(); 
+                $("#div_penerima").show(); 
+            }
 
             var tableContainer = document.getElementById('tableDetail'); 
             $(".preloader").show();
