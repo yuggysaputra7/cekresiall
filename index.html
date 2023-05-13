@@ -2,66 +2,44 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>Cek resi by Yugs</title>
     <link rel="shortcut icon" type="image/x-icon" href="img/maptracking.ico" />
-
-    <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-
-    <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-
 </head>
 <style>
- 
     .preloader {
-        
         position: fixed;
-        
         top: 0;
-        
         left: 0;
-        
         width: 100%;
-        
         height: 100%;
-        
         z-index: 9999;
-        
         background-color: #fff;
-        
     }
-        
+
     .preloader .loading {
-        
         position: absolute;
-        
         left: 50%;
-        
         top: 50%;
-        
-        transform: translate(-50%,-50%);
-        
+        transform: translate(-50%, -50%);
         font: 14px arial;
-        
     }
 
     .img-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10%;
     }
 </style>
 
@@ -79,111 +57,77 @@
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
-                    <!-- Topbar Search -->
-                    <!-- <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form> -->
                     <h1 class="h3 mb-0 text-gray-800">Cek Resi By Yugs </h1>
                     <img style="width:65px;" src="img/kurir1.png" alt="">
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
                             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
                             </a>
-                        <div class="topbar-divider d-none d-sm-block"></div>
-
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Cek Resi Admin</span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
-                            </a>
-                        </li>
-
+                            <div class="topbar-divider d-none d-sm-block"></div>
                     </ul>
 
                 </nav>
                 <!-- End of Topbar -->
 
                 <div class="preloader">
- 
                     <div class="loading">
-                   
-                      <img src="img/loading-animation(1).gif" width="100%"height="100%">
-                   
-                      <!-- <p>Harap Tunggu</p> -->
-                   
+                        <img src="img/loading-delivery.gif" width="100%" height="100%">
                     </div>
-                   
-                  </div>
+                </div>
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    
-                    
                     <div class="container my-5">
                         <div class="row justify-content-center">
-                          <div class="col-lg-9">
-                            <h1 class="h2 mb-0 text-gray-800">Silahkan Masukkan No Resi </h1>
-                            <form id="myForm" method="POST" action="https://api.binderbyte.com/v1/track">
-                              <div class="row">
-                                <div class="col-md-4">
-                                  <label for="your-kodebayar" class="form-label form-group">No Resi</label>
-                                  <input type="text" class="form-control" id="no_resi" name="no_resi" required>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="your-kodebayar" class="form-label form-group">Pilih Jenis Kurir</label>
-                                    <select id="kurir"class="form-select form-control" aria-label="Default select example">
-                                        <option selected>Pilih salah satu</option>
-                                        <option value="jne">JNE</option>
-                                        <option value="sicepat">SiCepat</option>
-                                        <option value="jnt">J&T</option>
-                                        <option value="anteraja">Anteraja</option>
-                                        <option value="spx">ShopeeExpress</option>
-                                        <option value="lion">Lion Parcel</option>
-                                    </select>
-                                  </div>
-                                  <!-- <div class="col-md-4">
-                                    <label for="your-kodebayar" class="form-label form-group">No Resi</label>
-                                    <input type="text" class="form-control" id="no_resi" name="no_resi" required>
-                                  </div> -->
-                                <div class="col-12">
-                                  <div class="row">
-                                    <div class="col-md-12">
-                                        <br>
-                                      <!-- <button data-res="<?php echo $sum; ?>" type="submit" class="btn btn-danger w-100 fw-bold">Send</button> -->
-                                      <button type="submit" class="btn btn- btn-danger col-md-2" id="send-data">Track</button><img src="img/tracksmall.gif" alt="">
-                                      <!-- <button type="submit" class="btn btn- btn-success  col-md-2" id="share-data"><i
-                                        class="fas fa-share fa-sm text-white-50"></i>Share</button> -->
+                            <div class="col-lg-9">
+                                <h1 class="h2 mb-0 text-gray-800">Silahkan Masukkan No Resi </h1>
+                                <form id="myForm" method="POST" action="https://api.binderbyte.com/v1/track">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="your-kodebayar" class="form-label form-group">No Resi</label>
+                                            <input type="text" class="form-control" id="no_resi" name="no_resi"
+                                                required>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="your-kodebayar" class="form-label form-group">Pilih Jenis
+                                                Kurir</label>
+                                            <select id="kurir" class="form-select form-control"
+                                                aria-label="Default select example">
+                                                <option selected>Pilih salah satu</option>
+                                                <option value="jne">JNE</option>
+                                                <option value="sicepat">SiCepat</option>
+                                                <option value="jnt">J&T</option>
+                                                <option value="anteraja">Anteraja</option>
+                                                <option value="spx">ShopeeExpress</option>
+                                                <option value="lion">Lion Parcel</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <br>
+                                                    <!-- <button data-res="<?php echo $sum; ?>" type="submit" class="btn btn-danger w-100 fw-bold">Send</button> -->
+                                                    <button type="submit" class="btn btn- btn-danger col-md-2"
+                                                        id="send-data">Track</button>
+                                                </div>
+                                                <br>
+                                            </div>
+                                        </div>
                                     </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </form>
-                          </div>
+                                </form>
+                            </div>
                         </div>
-                    </div> 
+                    </div>
+                    <div class="alert alert-success" id="alert_notification_success" style="display: none;">
+                        <strong>Success!</strong> Indicates a successful or positive action.
+                    </div>
+                    <div class="alert alert-danger" id="alert_notification_danger" style="display: none;">
+                        <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+                    </div>
                     <!-- Content Row -->
                     <div class="row">
 
@@ -194,7 +138,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                               Jenis Kurir</div>
+                                                Jenis Kurir</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800" id="jenis_kurir">-</div>
                                         </div>
                                         <div class="col-auto">
@@ -213,7 +157,8 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 No Resi</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="no_resi_text">-</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="no_resi_text">-
+                                            </div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-address-card fa-2x text-gray-300"></i>
@@ -229,12 +174,13 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1" >Status
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Status
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" id="status_resi">-</div>
-                                                </div> 
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"
+                                                        id="status_resi">-</div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -246,15 +192,17 @@
                         </div>
 
                         <!-- shipper -->
-                        <div class="col-xl-5 col-md-6 mb-4"id='div_pengirim'>
+                        <div class="col-xl-5 col-md-6 mb-4" id='div_pengirim'>
                             <div class="card border-left-danger shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                               Pengirim</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="nama_pengirim">-</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="kota_pengirim">-</div>
+                                                Pengirim</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="nama_pengirim">-
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="kota_pengirim">-
+                                            </div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-child fa-2x text-gray-300"></i>
@@ -264,16 +212,18 @@
                             </div>
                         </div>
 
-                          <!-- receiver -->
-                          <div class="col-xl-5 col-md-6 mb-4"id='div_penerima'>
+                        <!-- receiver -->
+                        <div class="col-xl-5 col-md-6 mb-4" id='div_penerima'>
                             <div class="card border-left-warning shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                               Penerima</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="nama_penerima">-</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="kota_penerima">-</div>
+                                                Penerima</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="nama_penerima">-
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="kota_penerima">-
+                                            </div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-child fa-2x text-gray-300"></i>
@@ -287,279 +237,267 @@
                     <!-- Content Row -->
 
                     <div class="row">
-                    <div class="col-lg-12">
-                    <!-- Collapsable Card Example -->
-                        <div class="card shadow mb-4">
-                            <!-- Card Header - Accordion -->
-                            <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse"
-                                role="button" aria-expanded="true" aria-controls="collapseCardExample">
-                                <h6 class="m-0 font-weight-bold text-primary">Lihat Perjalanan Paket</h6>
-                            </a>
-                            <!-- Card Content - Collapse -->
-                            <div class="collapse show" id="collapseCardExample">
-                                <div class="card-body">
-                                    Masukan no resi dan jenis kurir terlebih dahulu agar tahu detail perjalanan paketmu.
-                        </div>
-                        <div class="img-container">
-                            <img src="img/maptracking.gif" alt="">
-                        </div>
-                        <br>
+                        <div class="col-lg-12">
+                            <!-- Collapsable Card Example -->
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Accordion -->
+                                <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse"
+                                    role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                                    <h6 class="m-0 font-weight-bold text-primary">Lihat Perjalanan Paket</h6>
+                                </a>
+                                <!-- Card Content - Collapse -->
+                                <div class="collapse show" id="collapseCardExample">
+                                    <img src="img/tracksmall.gif" alt="">
+                                    <div class="card-body">
 
-                        <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Detail Perjalanan Paket</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="tableDetail" width="100%" cellspacing="0">
-                                    <thead>
-                                        <!-- <tr>
-                                            <th>Date</th>
-                                            <th>Description</th>
-                                        </tr> -->
-                                    </thead>
-                                    <tbody>
-                                        <!-- <tr>
-                                            <td>-</td>
-                                            <td>-</td>
-                                        </tr> -->
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                                        Masukan no resi dan jenis kurir terlebih dahulu agar tahu detail perjalanan
+                                        paketmu.
+                                    </div>
+                                    <br>
+
+                                    <!-- DataTales Example -->
+                                    <div class="card shadow mb-4">
+                                        <div class="card-header py-3">
+                                            <h6 class="m-0 font-weight-bold text-primary">Detail Perjalanan Paket</h6>
+                                        </div>
+                                        <div class="img-container">
+                                            <img src="img/maptracking.gif" alt="">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered" id="tableDetail" width="100%"
+                                                    cellspacing="0">
+                                                    <thead>
+                                                        <!-- <tr>
+                                                        <th>Date</th>
+                                                        <th>Description</th>
+                                                    </tr> -->
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- <tr>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                    </tr> -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
                         </div>
 
                     </div>
-            
-                <!-- /.container-fluid -->    
-                
-            </div>
-            <!-- End of Main Content -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Track Your Packet - 2023</span>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- End of Main Content -->
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Track Your Packet - 2023</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
+
+            </div>
+            <!-- End of Content Wrapper -->
+
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Harap Masukan Kembali</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Input Kembali</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <!-- <a class="btn btn-primary" href="login.html">Logout</a> -->
                     </div>
                 </div>
-            </footer>
-            <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Harap Masukan Kembali</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Input Kembali</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <!-- <a class="btn btn-primary" href="login.html">Logout</a> -->
-                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
+        <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
+        <!-- Page level custom scripts -->
+        <script src="js/demo/datatables-demo.js"></script>
 
-    <script>
+        <script>
 
-        $(document).ready(function(){
-            $(".preloader").hide();
-
-        })
-       document.getElementById("myForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Mencegah form dikirim dengan cara default
-
-            var formData = new FormData(event.target);
-            
-            var no_resi_key = $("#no_resi").val();
-            var kurir = $("#kurir").val();
-            var api_key = "6cf2cf9234c6196e15c37c844dfec41002ab0231f03feb1c4314b8d7343c29f9";
-            
-            var cacheBuster = Math.random();
-            var hit_api = `https://api.binderbyte.com/v1/track?api_key=${api_key}&courier=${kurir}&awb=${no_resi_key}&cacheBuster=${cacheBuster}`;
-            
-            // Mengirim form menggunakan metode get
-
-            if(kurir === 'jnt'){
-                $("#div_pengirim").hide(); 
-                $("#div_penerima").hide(); 
-            }else if(kurir === 'spx'){
-                $("#div_pengirim").hide(); 
-            }
-            else{
-                $("#div_pengirim").show(); 
-                $("#div_penerima").show(); 
-            }
-
-            var tableContainer = document.getElementById('tableDetail'); 
-            $(".preloader").show();
-            fetch(hit_api)
-            .then(response => response.json())
-            .then(data => {
-                // Lakukan sesuatu dengan data yang diterima
-                console.log(data);
-                if(data.status == "400"){
-                    alert(data.message);
-                }
-
-                var responseData = data;
-                var origin = responseData.data.detail.origin;
-                var shipper = responseData.data.detail.shipper;
-                var receiver = responseData.data.detail.receiver;
-                var destination = responseData.data.detail.destination;
-                var kurir = responseData.data.summary.courier;
-                var resivalue = responseData.data.summary.awb;
-                var status = responseData.data.summary.status;
-                var dataArray = responseData.data.history;
-              
-                var kurirElement = document.getElementById("jenis_kurir");
-                kurirElement.innerHTML = kurir;
-
-                var resiElement = document.getElementById("no_resi_text");
-                resiElement.innerHTML = resivalue;
-
-                var statusElement = document.getElementById("status_resi");
-                statusElement.innerHTML = status;
-                
-                var namaPengirimElement = document.getElementById("nama_pengirim");
-                namaPengirimElement.innerHTML = shipper;
-
-                var namaPenerimalement = document.getElementById("nama_penerima");
-                namaPenerimalement.innerHTML = receiver;
-
-                var namaOriginElement = document.getElementById("kota_pengirim");
-                namaOriginElement.innerHTML = origin;
-
-                var namaDestinationElement = document.getElementById("kota_penerima");
-                namaDestinationElement.innerHTML = destination;
-
-                // if ( $.fn.DataTable.isDataTable('#tableDetail') ) {
-                // $('#tableDetail').DataTable().destroy();
-                // }
-
-                var existingTable = tableContainer.querySelector('table');
-                if (existingTable) {
-                    tableContainer.removeChild(existingTable);
-                }
-
-                var table = document.createElement('table');
-                // Create table header row
-                var headerRow = document.createElement('tr');
-                var columnsToShow = ['Date', 'Description','Location'];
-                for (var i = 0; i < columnsToShow.length; i++) {
-                var columnName = columnsToShow[i];
-                var headerCell = document.createElement('th');
-                headerCell.textContent = columnName;
-                headerRow.appendChild(headerCell);
-                }
-                table.appendChild(headerRow);
-
-                // Create table body rows
-                for (var i = 0; i < dataArray.length; i++) {
-                var dataRow = document.createElement('tr');
-                for (var key in dataArray[i]) {
-                    var dataCell = document.createElement('td');
-                    dataCell.textContent = dataArray[i][key];
-                    dataRow.appendChild(dataCell);
-                }
-                table.appendChild(dataRow);
-                }
-                //ganti date format
-                for (var i = 1; i < table.rows.length; i++) {
-                    var row = table.rows[i];
-                    
-                    // Assuming the date value is in the first column (index 0)
-                    var dateCell = row.cells[0];
-                    var dateValue = dateCell.textContent.trim(); // Get the existing date value
-                    
-                    // Convert the date format
-                    var parts = dateValue.split(' '); // Split date and time
-                    var date = parts[0];
-                    var time = parts[1];
-                    
-                    var dateParts = date.split('-');
-                    var day = dateParts[2];
-                    var month = dateParts[1];
-                    var year = dateParts[0];
-                    
-                    // Update the date format within the table cell
-                    dateCell.textContent = day + '-' + month + '-' + year + ' ' + time;
-                }
-                // Add table to an existing element on the page
-              
-                tableContainer.appendChild(table);
+            $(document).ready(function () {
                 $(".preloader").hide();
-               
             })
-            .catch(error => {
-                // Tangani kesalahan jika terjadi
-                $(".preloader").hide();
-                console.error('Terjadi kesalahan:', error);
-                alert('Terjadi kesalahan',error);
-                
-                // location.reload();
-                
+            document.getElementById("myForm").addEventListener("submit", function (event) {
+                event.preventDefault(); // Mencegah form dikirim dengan cara default
+
+                var formData = new FormData(event.target);
+
+                var no_resi_key = $("#no_resi").val();
+                let kurir_api = $("#kurir").val();
+                var api_key = "6cf2cf9234c6196e15c37c844dfec41002ab0231f03feb1c4314b8d7343c29f9";
+
+                var cacheBuster = Math.random();
+                var hit_api = `https://api.binderbyte.com/v1/track?api_key=${api_key}&courier=${kurir_api}&awb=${no_resi_key}&cacheBuster=${cacheBuster}`;
+
+                // Mengirim form menggunakan metode get
+
+                if (kurir_api === 'jnt') {
+                    $("#div_pengirim").hide();
+                    $("#div_penerima").hide();
+                } else if (kurir_api === 'spx') {
+                    $("#div_pengirim").hide();
+                    $("#div_penerima").show();
+                }
+                else {
+                    $("#div_pengirim").show();
+                    $("#div_penerima").show();
+                }
+
+                var tableContainer = document.getElementById('tableDetail');
+                $(".preloader").show();
+                fetch(hit_api)
+                    .then(response => response.json())
+                    .then(data => {
+                        // Lakukan sesuatu dengan data yang diterima
+                        console.log(data);
+                        if (data.status == "400") {
+                            alert(data.message);
+                        }
+
+                        var responseData = data;
+                        var origin = responseData.data.detail.origin;
+                        var shipper = responseData.data.detail.shipper;
+                        var receiver = responseData.data.detail.receiver;
+                        var destination = responseData.data.detail.destination;
+                        var kurir = responseData.data.summary.courier;
+                        var resivalue = responseData.data.summary.awb;
+                        var status = responseData.data.summary.status;
+                        var dataArray = responseData.data.history;
+
+                        var kurirElement = document.getElementById("jenis_kurir");
+                        kurirElement.innerHTML = kurir;
+
+                        var resiElement = document.getElementById("no_resi_text");
+                        resiElement.innerHTML = resivalue;
+
+                        var statusElement = document.getElementById("status_resi");
+                        statusElement.innerHTML = status;
+
+                        var namaPengirimElement = document.getElementById("nama_pengirim");
+                        namaPengirimElement.innerHTML = shipper;
+
+                        var namaPenerimalement = document.getElementById("nama_penerima");
+                        namaPenerimalement.innerHTML = receiver;
+
+                        var namaOriginElement = document.getElementById("kota_pengirim");
+                        namaOriginElement.innerHTML = origin;
+
+                        var namaDestinationElement = document.getElementById("kota_penerima");
+                        namaDestinationElement.innerHTML = destination;
+
+                        $("#alert_notification_success").show();
+                        var alertNotifElement = document.getElementById("alert_notification_success");
+
+                        if (kurir_api === "jne" || kurir_api === "anteraja" || kurir_api === "sicepat" || kurir_api === "lion") {
+                            alertNotifElement.innerHTML = `Selamat, paket ${kurir} dengan no resi ${resivalue} yang dikirim ${shipper} dari ${origin} status ${status}`;
+                        } else if (kurir_api === "spx" || kurir_api === "jnt") {
+                            alertNotifElement.innerHTML = `Selamat, paket ${kurir} anda dengan no resi ${resivalue} status ${status}`;
+                        }
+                        var existingTable = tableContainer.querySelector('table');
+                        if (existingTable) {
+                            tableContainer.removeChild(existingTable);
+                        }
+
+                        var table = document.createElement('table');
+                        // Create table header row
+                        var headerRow = document.createElement('tr');
+                        var columnsToShow = ['Date', 'Description', 'Location'];
+                        for (var i = 0; i < columnsToShow.length; i++) {
+                            var columnName = columnsToShow[i];
+                            var headerCell = document.createElement('th');
+                            headerCell.textContent = columnName;
+                            headerRow.appendChild(headerCell);
+                        }
+                        table.appendChild(headerRow);
+
+                        // Create table body rows
+                        for (var i = 0; i < dataArray.length; i++) {
+                            var dataRow = document.createElement('tr');
+                            for (var key in dataArray[i]) {
+                                var dataCell = document.createElement('td');
+                                dataCell.textContent = dataArray[i][key];
+                                dataRow.appendChild(dataCell);
+                            }
+                            table.appendChild(dataRow);
+                        }
+                        //ganti date format
+                        for (var i = 1; i < table.rows.length; i++) {
+                            var row = table.rows[i];
+
+                            // Assuming the date value is in the first column (index 0)
+                            var dateCell = row.cells[0];
+                            var dateValue = dateCell.textContent.trim(); // Get the existing date value
+
+                            // Convert the date format
+                            var parts = dateValue.split(' '); // Split date and time
+                            var date = parts[0];
+                            var time = parts[1];
+
+                            var dateParts = date.split('-');
+                            var day = dateParts[2];
+                            var month = dateParts[1];
+                            var year = dateParts[0];
+
+                            // Update the date format within the table cell
+                            dateCell.textContent = day + '-' + month + '-' + year + ' ' + time;
+                        }
+                        // Add table to an existing element on the page
+                        tableContainer.appendChild(table);
+                        $(".preloader").hide();
+
+                    })
+                    .catch(error => {
+                        // Tangani kesalahan jika terjadi
+                        $(".preloader").hide();
+                        var alertNotifElementDanger = document.getElementById("alert_notification_danger");
+                        alertNotifElementDanger.innerHTML = `Terjadi Kesalahan, Harap input kembali`;
+                        $("#alert_notification_danger").show();
+                        $("#alert_notification_success").hide();
+                        console.error('Terjadi kesalahan:', error);
+                        alert('Terjadi kesalahan', error);
+                    });
             });
-            // fetch(event.target.action, {
-            // method: "GET",
-            // headers: {
-            //     // "Content-Type": "application/json",
-            //     "Accept": "application/json",
-            // },
-           
-            //  body : JSON.stringify({ awb: no_resi,courier: kurir,api_key: api_key}),
-            // })
-            // .then(response => response.json())
-            // .then(data => {
-            //     // Handle the response from the API
-            //     console.log(data);
-                
-            // })
-            // .catch(error => {
-            //     // Tangani kesalahan yang terjadi saat pengiriman
-            //     console.log(error);
-            // });
-        });
 
-    </script>
-
+        </script>
+    </div>
 </body>
 
 </html>
